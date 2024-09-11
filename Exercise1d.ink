@@ -78,7 +78,7 @@ You ran into the ocean and became swallowed up by the large waves -> under_water
 
 == under_water ==
 
-The waves guided you to an underwater cave, in which the crabs created their kingdom. They kept you as aslve, forced to forever find shells for them as they continue to molt. 
+The waves guided you to an underwater cave, in which the crabs created their kingdom. They kept you as slave, forced to forever find shells for them as they continue to molt. 
 
 -> END
 
