@@ -13,27 +13,76 @@ This exercise will demonstrate the following in the example video:
 */
 
 
-VAR time = 0 //  0 Morning, 1 Noon, 2 Night
-
-
-
+VAR time = -1 //  0 Morning, 1 Noon, 2 Night
 
 -> seashore
 
 == seashore ==
 You are sitting on the beach. 
 
-+ [Wait] -> seashore
--> DONE
+It is { advance_time()}
+
+
++ [Stroll down the beach] -> beach2 
+
 
 == beach2 ==
-This is further down the beach.
+This is further down the beach. 
 
-+ [Move back up the beach] -> seashore
+
+
+
+It is { advance_time() }
+* { time == 1 }  [Pick up some seashells] -> shells
++ [Stroll back up the beach] -> seashore
+
 
 == shells ==
-You pick up the shells
+You pick up the shells. Inside one of the shells, you find a crab. 
+* [Keep it]
+
+You kept the crab. It repeatedly snips at you, but you think you both can become pretty good friends. -> water
+
+* [Put it back]
+
+
+
+== water ==
+
+As you get closer to the water, more shells appear. 
+* [ Look for more crabby friends]
+
+Well, you found what you were looking for. Tons on tons of little angry crabs marched their way to you. -> crab_conquerers
+
+* [Continue down the beach]
+
 -> beach2
+
+
+== crab_conquerers ==
+
+They raced up your body, leaving small pinches all over your extremties!
+
+*[ Flail and scream]
+
+When you screamed, you opened your mouth so wide, that a came into your mouth and used you as a bigger shell. 
+
+-> END
+
+
+*[Run into the ocean]
+
+You ran into the ocean and became swallowed up by the large waves -> under_water
+
+->END
+
+== under_water ==
+
+The waves guided you to an underwater cave, in which the crabs created their kingdom. They kept you as aslve, forced to forever find shells for them as they continue to molt. 
+
+-> END
+
+
 
 == function advance_time ==
 
@@ -43,7 +92,7 @@ You pick up the shells
         - time > 2:
             ~ time = 0
     }    
-    /*
+    
     {    
         - time == 0:
             ~ return "Morning"
@@ -55,7 +104,7 @@ You pick up the shells
             ~ return "Night"
     
     }
-    */
+    
     
         
     ~ return time
